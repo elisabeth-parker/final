@@ -1,0 +1,313 @@
+/*styling for pagepiling effect*/
+.section {
+  height: 100%;
+}
+
+/*styling for titles on each page (text and background image)*/
+#section0 .section-title {
+  background-image: url(../images/bg1.png);
+}
+#section2 .section-title {
+  background-image: url(../images/bg2.png);
+}
+#section3 .section-title {
+  background-image: url(../images/bg3.png);
+}
+#section4 .section-title {
+  background-image: url(../images/bg4.png);
+}
+#section5 .section-title {
+  background-image: url(../images/bg5.png);
+}
+#section5b .section-title {
+  background-image: url(../images/bg5b.png);
+}
+#section6 .section-title {
+  background-image: url(../images/bg6.png);
+}
+.section-title {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-title h2 {
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 90px;
+  color: white;
+}
+
+
+/*landing page styles*/
+#section1 {
+  text-align: center;
+  background-image: url(../images/sunset.png);
+  background-size: cover;
+}
+#section1 div {
+  vertical-align: top;
+}
+/*primary title*/
+#section1 h1 {
+  padding-top: 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70px;
+  color: white;
+}
+/*landing page subtitle*/
+#section1 h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: black;
+}
+
+
+/*styling for each page's paragraphs*/
+#section1 p, #section2 p, #section3 p, #section4 p, #section5 p, #section5b p {
+  padding-left: 20px;
+  padding-top: 75px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  min-height: 350px;
+  color: white;
+  text-align: left;
+}
+
+#section3 p {
+  min-height: 450px;
+}
+
+#section4 em {
+  color: #ab175e;
+}
+
+/*styling for text navigation left/right buttons*/
+#lr a, #div-lr a, #team-lr a {
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+
+#lr a:hover, #div-lr a:hover, #team-lr a:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+#lr a:first-of-type, #div-lr a:first-of-type, #team-lr a:first-of-type {
+  margin-right: 30px;
+  opacity: 0;
+  cursor: default;
+}
+#lr, #div-lr, #team-lr {
+  text-align: center;
+}
+
+/*section 2 styling*/
+#section2 #lr a:first-of-type {
+  margin-right: 30px;
+  opacity: 0;
+}
+
+.info {
+  min-height: 500px;
+}
+
+.info div {
+  min-height: 500px;
+}
+
+.info div img {
+  min-height: 500px;
+}
+
+.info span {
+  color: white;
+}
+
+/*section 3 styling, incl table with division markers*/
+#section3 p {
+  padding: 0px 20px;
+}
+th {
+  border-bottom: 2px solid white;
+}
+th, td {
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  padding: 20px;
+  text-align: center;
+}
+td:first-child {
+  border-right: 2px solid white;
+}
+th:first-child {
+  border: none;
+}
+td img {
+  min-height: 25px !important;
+  text-align: center;
+}
+#legend {
+  display: block;
+  position: relative;
+  left: 100px;
+  margin: 30px auto;
+  min-height: 50px;
+  max-height: 60px;
+  opacity: 1;
+}
+#audl {
+    display: block;
+    margin: 0px auto 12px auto;
+    position: static;
+    opacity: 0;
+}
+#audl-active {
+    display: block;
+    margin: 0px auto;
+    position: static;
+}
+#audl-active:hover {
+  cursor: pointer;
+}
+.tooltip_templates {
+  display: none;
+}
+
+/*Styling for Icons page*/
+#teams-image {
+  min-height: 50px !important;
+  max-height: 50px;
+  text-align: center;
+  margin-left: 50px;
+}
+.icon {
+  min-height: 100px!important;
+  max-height: 100px;
+  /*display: inline-flex;
+  position: relative;
+  top: 100px;
+  left: -500px;*/
+  margin: 0px 30px;
+  opacity: 0;
+  cursor: pointer;
+  position: static!important;
+  display: inline!important;
+}
+#map {
+  display: none;
+  opacity: 0;
+  height: 500px;
+  width: 100%;
+}
+
+#map-toggle {
+  display: none;
+  opacity: 0;
+  background-color: white;
+  height: 50px;
+  width: 150px;
+  color: #cd545f;
+  border: none;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+#map-toggle:hover {
+  cursor: pointer;
+}
+
+
+/*Styling for tooltips in Icons page*/
+#icons {
+  text-align: center;
+}
+span>p {
+  color: #e17960;
+  line-height: 125%;
+  padding: 20px;
+  font-size: 20px!important;
+}
+span>p>a {
+  color: black;
+}
+span>p>a:hover {
+  color: grey;
+}
+.tooltipster-base {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+
+p>a {
+  color: black;
+}
+p>a:hover {
+  color: grey;
+}
+
+#section5 iframe {
+  margin-top: 50%;
+}
+
+
+#section6 h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  padding-right: 50px;
+  margin-top: 50px;
+}
+
+p.text {
+  min-height: none;
+  max-height: 50px!important;
+  padding: 0px;
+}
+
+#section6>.row>.quiz {
+  padding-left: 50px;
+  margin-bottom: 100px;
+}
+
+#section5b #twitterAPI {
+  width: 500px;
+  height: 500px;
+  margin-top: 50px;
+}
+
+#timeImage {
+  position: fixed;
+  width: 200px;
+  height: 150px;
+  top: 50%;
+  left: 75%;
+  margin-top: -75px; /* Negative half of height. */
+  margin-left: -100px; /* Negative half of width. */
+}
+
+#section7 {
+  padding: 100px;
+}
+
+#section7 a {
+  color: white;
+  text-decoration: underline;
+}
+
+#section7 h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  margin: 50px auto;
+}
