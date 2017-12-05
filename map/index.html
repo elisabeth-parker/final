@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map, #map2 {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="map2"></div>
+    <script>
+      var map;
+      function initMap() {
+        var usa = {lat: 39.000, lng: -98.000};
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: usa
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+
+        // This example uses a local copy of the GeoJSON stored at
+        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+        script.src = 'http://elisabethparker.net/static/mj487/map/js/data.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        map.data.setStyle(function(feature) {
+          var magnitude = feature.getProperty('count');
+          var state = feature.getProperty('place');
+          console.log(magnitude);
+          return {
+            icon: getCircle(magnitude,state)
+          };
+        });
+      }
+
+      function getCircle(magnitude,state) {
+        if(state==='CA'||state==='CO'||state==='WA') {
+          return {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: '#ab175e',
+            fillOpacity: .5,
+            scale: magnitude/50,
+            strokeColor: 'white',
+            strokeWeight: 2
+          };
+        } else {
+          return {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: '#ffaf62',
+            fillOpacity: .5,
+            scale: magnitude/50,
+            strokeColor: 'white',
+            strokeWeight: .5
+          };
+        }
+//
+      }
+
+      function eqfeed_callback(results) {
+        map.data.addGeoJson(results);
+      }
+
+       //  var carrollHall = {lat: 35.9110227, lng: -79.051884};
+       //
+       //  var map2 = new google.maps.Map(document.getElementById('map2'), {
+       //    zoom: 14,
+       //    center: {lat: 35.904912, lng: -79.046913}
+       //  });
+       //
+       //  var contentString = '<div id="content">'+
+       //      '<div id="siteNotice">'+
+       //      '</div>'+
+       //      '<h1 id="firstHeading" class="firstHeading">Carroll Hall</h1>'+
+       //      '<div id="bodyContent">'+
+       //      '<p><b>Carroll Hall</b>, also referred to as <b>MEJO boarding school</b>, is a large ' +
+       //      'academic building in the northern part of the '+
+       //      'University of North Carolina Chapel Hill. It lies 335&#160;km (208&#160;mi) '+
+       //      'south west of the nearest large town, Raleigh; 450&#160;km '+
+       //      '(280&#160;mi) by road. </p>'+
+       //      '</div>'+
+       //      '</div>';
+       //
+       //  var infowindow = new google.maps.InfoWindow({
+       //    content: contentString
+       //  });
+       //
+       //  var marker2 = new google.maps.Marker({
+       //    position: carrollHall,
+       //    map: map2,
+       //    title: 'Carroll Hall'
+       //  });
+       //  marker2.addListener('click', function() {
+       //   infowindow.open(map, marker2);
+       // });
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQoCNMvFuEHWambNcr82R-oq3J3IEn8pU&callback=initMap">
+    </script>
+  </body>
+</html>
